@@ -31,11 +31,12 @@ Result: 7886.272 Inches
 
 ## Dependency
 
-You can get latest version from `Releases` tab on GitHub.
+Releases are available from Maven Central and the
+[GitHub Releases](https://github.com/itzephir/calkt/releases) page.
 
 ```kotlin
 dependencies {
-  implementation("me.y9san9.calkt:units:$version")
+  implementation("com.itzephir.calkt:units:$version")
 }
 ```
 
