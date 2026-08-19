@@ -53,8 +53,9 @@ functions to launch parsers/calculators.
 
 Module with implementation of basic math expressions that any
 calculator can calculate. This is where you can find logic to
-calculate numbers combined with basic supported operators (
-`+`, `-`, `*`, `/`). You can implement your own operator, like 
+calculate numbers combined with basic supported binary operators (
+`+`, `-`, `*`, `/`) and unary operators (`+`, `-`). You can implement
+your own operator, like
 in [this example](example/src/main/kotlin/operator/ModOperator.kt) (% operator).
 
 ### units

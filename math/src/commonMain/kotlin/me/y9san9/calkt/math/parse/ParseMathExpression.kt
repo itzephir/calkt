@@ -6,7 +6,8 @@ import me.y9san9.calkt.parse.ParseContext
 public fun ParseContext.parseMathExpression(
     parseOperand: MathParseOperandFunction = DefaultMathParseOperand,
     infixOperatorList: List<MathParseInfixKeyFunction> = DefaultMathInfixOperators.list,
+    parseUnaryKey: MathParseUnaryKeyFunction = DefaultMathUnaryOperators.function,
 ): Expression {
-    val parse = MathParse(parseOperand, infixOperatorList)
+    val parse = MathParse(parseOperand, infixOperatorList, parseUnaryKey)
     return parse(context)
 }
