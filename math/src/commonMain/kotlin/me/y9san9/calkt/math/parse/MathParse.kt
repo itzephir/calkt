@@ -6,9 +6,11 @@ import me.y9san9.calkt.parse.ParseContext
 
 public class MathParse(
     operand: MathParseOperandFunction,
-    parseInfixKeyList: List<MathParseInfixKeyFunction>
+    parseInfixKeyList: List<MathParseInfixKeyFunction>,
+    parseUnaryKey: MathParseUnaryKeyFunction = DefaultMathUnaryOperators.function
 ) : ParseFunction {
-    private val parseInfixOperatorList = MathParseInfixOperatorList(operand, parseInfixKeyList)
+    private val parseUnaryOperator = MathParseUnaryOperator(operand, parseUnaryKey)
+    private val parseInfixOperatorList = MathParseInfixOperatorList(parseUnaryOperator, parseInfixKeyList)
 
     override fun invoke(context: ParseContext): Expression {
         return parseInfixOperatorList(context)
