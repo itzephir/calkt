@@ -11,3 +11,12 @@ public fun ParseContext.parseMathExpression(
     val parse = MathParse(parseOperand, infixOperatorList, parseUnaryKey)
     return parse(context)
 }
+
+public fun ParseContext.parseMathExpression(
+    parseOperand: MathParseOperandFunction = DefaultMathParseOperand,
+    infixOperatorLevels: MathParseInfixOperatorLevels,
+    parseUnaryKey: MathParseUnaryKeyFunction = DefaultMathUnaryOperators.function,
+): Expression {
+    val parse = MathParse(parseOperand, infixOperatorLevels, parseUnaryKey)
+    return parse(context)
+}
