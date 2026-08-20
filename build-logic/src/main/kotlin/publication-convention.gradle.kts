@@ -34,5 +34,11 @@ mavenPublishing {
         }
     }
 
-    signAllPublications()
+    val hasSecretKeyRing = providers.gradleProperty("signing.secretKeyRingFile")
+        .map { file(it).isFile }
+        .getOrElse(false)
+
+    if (providers.gradleProperty("signingInMemoryKey").isPresent || hasSecretKeyRing) {
+        signAllPublications()
+    }
 }
